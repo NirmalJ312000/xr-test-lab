@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="XR Test Lab — Test the Experience. Trust the Immersion.">
+<meta name="color-scheme" content="dark">
+<title>XR Test Lab</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Ambient depth (CSS-driven) and The Field (cursor-reactive vector lattice).
+     Both are purely decorative and are removed for reduced motion / touch. -->
+<div class="aurora" aria-hidden="true"><span></span><span></span></div>
+<canvas id="field" aria-hidden="true"></canvas>
+
+<!-- Brand gradient used by the score ring; defined once, referenced by SVG. -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <defs>
+    <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#5B8CFF"/>
+      <stop offset="55%"  stop-color="#7C6BF5"/>
+      <stop offset="100%" stop-color="#A981F7"/>
+    </linearGradient>
+    <linearGradient id="markGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#7FA6FF"/>
+      <stop offset="55%"  stop-color="#7C6BF5"/>
+      <stop offset="100%" stop-color="#A981F7"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <a class="brand" href="#/" aria-label="XR Test Lab — Test the Experience. Trust the Immersion.">
+    <span class="brand-mark" id="brandMark" aria-hidden="true"></span>
+    <span class="brand-text">
+      <span class="mark">XR Test Lab</span>
+      <span class="sub">Test the Experience. Trust the Immersion.</span>
+    </span>
+  </a>
+  <nav class="mainnav" aria-label="Main">
+    <a class="navlink" data-nav="dashboard" href="#/">Dashboard</a>
+    <a class="navlink" data-nav="projects"  href="#/projects">Applications</a>
+    <a class="navlink" data-nav="students"  href="#/students">Students</a>
+    <a class="navlink" data-nav="sessions"  href="#/sessions">Test Sessions</a>
+    <a class="navlink" data-nav="bugs"      href="#/bugs">Defects</a>
+    <a class="navlink" data-nav="data"      href="#/data">Data</a>
+  </nav>
+  <div class="spacer"></div>
+  <a class="btn primary sm" data-nav="import" href="#/import">Import Report</a>
+</header>
+
+<div class="layout">
+  <main class="main" id="main" tabindex="-1"></main>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Vendored locally by `npm install` so the app works with no internet. -->
+<script src="vendor/chart.umd.js"></script>
+<script src="vendor/jspdf.umd.min.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

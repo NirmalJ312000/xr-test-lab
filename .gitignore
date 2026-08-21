@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Local database and imported reports.
+# This is USER DATA (student names, IDs, captured performance reports) — never
+# source. Everything under data/ is excluded except the folder marker, so test
+# data can never be committed by accident. The folder is recreated on first run.
+data/*
+!data/.gitkeep
+
+# Browser libraries vendored from node_modules by `npm install`
+web/vendor/
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Logs / runtime
+*.log
+npm-debug.log*
+coverage/
+
+# Unity (reports written by XRTestProfiler in the Editor)
+unity/**/XRTestReports/
+*.csproj
+*.sln
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
