@@ -11,7 +11,8 @@
     "start": "node server/src/index.js",
     "dev": "node --watch server/src/index.js",
     "test": "node --test \"server/tests/**/*.test.js\"",
-    "postinstall": "node scripts/vendor-assets.js"
+    "postinstall": "node scripts/vendor-assets.js",
+    "build:pages": "node scripts/build-pages.js"
   },
   "dependencies": {
     "chart.js": "^4.4.7",
